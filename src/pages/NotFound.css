@@ -1,0 +1,32 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 160px 40px;
+  text-align: center;
+}
+
+.not-found__title {
+  font-family: var(--font-serif);
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 70px;
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .not-found {
+    padding: 96px 16px;
+  }
+
+  .not-found__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .not-found__break {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+node_modules
+dist
+.design-ref
+.env
+.env.local
+*.log
+.DS_Store
+
+# Design sources contain gated case study content; keep them out of the public repo
+*.pen
+ux_portfolio_2026_sitedesign-assets/
+Case Study READER DASHBOARD/

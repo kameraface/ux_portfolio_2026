@@ -1,0 +1,42 @@
+:root {
+  /* Core colors */
+  --color-bg: #141414;
+  --color-surface: #222222;
+  --color-bg-elevated: #444444;
+  --color-text: #ffffff;
+  --color-text-muted: #999999;
+  --color-text-on-accent: #222222;
+  --color-text-pressed: #202020;
+  --color-surface-light: #ffffff;
+  --color-border-subtle: #dddddd;
+
+  /* Brand */
+  --color-primary: #ffcc00;
+  --color-secondary: #ae5ec2;
+  --color-tertiary: #00e7ff;
+  --color-quaternary: #ff9900;
+
+  /* Case study accents */
+  --color-accent-reader: var(--color-secondary);
+  --color-accent-obituaries: var(--color-primary);
+  --color-accent-roasty: var(--color-tertiary);
+  --color-accent-camp: #178573;
+
+  /* Feedback */
+  --color-focus: #ae5ec2;
+  --color-error: #f33751;
+
+  /* Type */
+  --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Shape */
+  --radius-field: 4px;
+  --radius-button: 8px;
+  --radius-card: 16px;
+
+  /* Layout */
+  --page-max: 1280px;
+  --focus-ring: 2px solid var(--color-focus);
+  --focus-offset: 1px;
+}
