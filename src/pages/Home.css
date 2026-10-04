@@ -193,6 +193,22 @@
   object-fit: cover;
 }
 
+.flickr-embed {
+  overflow: hidden;
+}
+
+.flickr-embed img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.flickr-embed iframe {
+  display: block;
+  max-width: 100%;
+  border: 0;
+}
+
 @media (max-width: 900px) {
   .about {
     flex-direction: column;

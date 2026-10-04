@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react'
 import { Link } from 'react-router'
 import portrait from '../assets/karl-portrait.jpg'
 import { Button } from '../components/Button'
+import { FlickrEmbed } from '../components/FlickrEmbed'
 import { Layout } from '../components/Layout'
 import { SubNav } from '../components/SubNav'
 import { playItems, projects, skillGroups, type Project, type SectionId } from '../content/site'
@@ -125,14 +126,25 @@ export function Home() {
           {playItems.map((item) => (
             <figure key={item.label} className="play__item" style={{ width: item.width }}>
               <figcaption className="play__label">{item.label}</figcaption>
-              <img
-                className="play__image"
-                src={item.src}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                loading="lazy"
-              />
+              {item.flickrAlbum ? (
+                <FlickrEmbed
+                  className="play__image"
+                  href={item.flickrAlbum.href}
+                  title={item.flickrAlbum.title}
+                  imageSrc={item.src}
+                  width={item.width}
+                  height={item.height}
+                />
+              ) : (
+                <img
+                  className="play__image"
+                  src={item.src}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  loading="lazy"
+                />
+              )}
             </figure>
           ))}
         </div>

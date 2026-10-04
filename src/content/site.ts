@@ -144,15 +144,20 @@ export interface PlayItem {
   alt: string
   width: number
   height: number
+  flickrAlbum?: { href: string; title: string }
 }
 
 export const playItems: PlayItem[] = [
   {
     label: 'Photography',
-    src: 'https://images.unsplash.com/photo-1608010110006-521beebba9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=660',
-    alt: 'Light painting of glowing red script against a dark night sky',
-    width: 220,
-    height: 300,
+    src: 'https://live.staticflickr.com/8804/28453257161_bff035190e.jpg',
+    alt: 'Beasts of Light and Shadow',
+    width: 300,
+    height: 225,
+    flickrAlbum: {
+      href: 'https://www.flickr.com/photos/whittikerowens/albums/72157716711390293',
+      title: 'Beasts of Light and Shadow',
+    },
   },
   {
     label: 'Bicycling and Adventures',
