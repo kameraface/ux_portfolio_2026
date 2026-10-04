@@ -14,7 +14,7 @@ export interface NavItem {
   href?: string
 }
 
-export const RESUME_URL = '#'
+export const RESUME_URL = 'https://docs.google.com/document/d/15u7Clygpc_VA1A65mRjq5klhNpCNqSShjV-b-GAD9go/view'
 
 export const navItems: NavItem[] = [
   { label: 'About', section: 'about' },

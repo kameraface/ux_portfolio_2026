@@ -25,8 +25,15 @@ export function NavLinks({ activeSection, onNavigate, className }: NavLinksProps
                 {item.label}
               </Link>
             ) : (
-              <a className="topnav-link" href={item.href} onClick={onNavigate}>
+              <a
+                className="topnav-link"
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onNavigate}
+              >
                 {item.label}
+                <span className="visually-hidden"> (opens in a new tab)</span>
               </a>
             )}
           </li>
