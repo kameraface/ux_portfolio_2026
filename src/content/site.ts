@@ -155,10 +155,10 @@ export interface PlayItem {
 export const playItems: PlayItem[] = [
   {
     label: 'Photography',
-    src: 'https://live.staticflickr.com/65535/55235543823_b93946dcb3.jpg',
+    src: 'https://live.staticflickr.com/65535/55235543823_b93946dcb3_n.jpg',
     alt: "Karl's Flickr photostream",
-    width: 640,
-    height: 480,
+    width: 300,
+    height: 225,
     flickrAlbum: {
       href: 'https://www.flickr.com/photos/68135637@N00',
       title: "Karl's Flickr photostream",
