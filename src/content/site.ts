@@ -96,6 +96,8 @@ export const projects: Project[] = [
       'The business owners wanted to make our obituary services more profitable, and also reduce dependence on vendors in the space. To that end, I was tasked with researching and designing a new obituary product.',
       'This project started with competitive analysis, wireframing, and business requirements discovery. We launched an MVP version of the project in time to replace our contracts. Follow up work included our own research efforts to learn more about our v2 design project.',
     ],
+    role: 'Roles: Design iterations, wireframing, design system creation, research, developer handoff, interviewing, planning',
+    tools: 'Tools: Figma, Chrome Inspector, UserZoom',
     placeholderColor: '#8a0000',
   },
   {
@@ -153,13 +155,13 @@ export interface PlayItem {
 export const playItems: PlayItem[] = [
   {
     label: 'Photography',
-    src: 'https://live.staticflickr.com/8804/28453257161_bff035190e.jpg',
-    alt: 'Beasts of Light and Shadow',
-    width: 220,
-    height: 423,
+    src: 'https://live.staticflickr.com/65535/55235543823_b93946dcb3.jpg',
+    alt: "Karl's Flickr photostream",
+    width: 640,
+    height: 480,
     flickrAlbum: {
-      href: 'https://www.flickr.com/photos/whittikerowens/albums/72157716711390293',
-      title: 'Beasts of Light and Shadow',
+      href: 'https://www.flickr.com/photos/68135637@N00',
+      title: "Karl's Flickr photostream",
     },
   },
   {

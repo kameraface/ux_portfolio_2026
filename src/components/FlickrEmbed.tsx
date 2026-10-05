@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 declare global {
   interface Window {
@@ -14,14 +14,27 @@ interface FlickrEmbedProps {
   imageSrc: string
   width: number
   height: number
+  header?: boolean
   className?: string
+  onHeightChange?: (height: number) => void
 }
 
 function escapeAttr(value: string) {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 }
 
-export function FlickrEmbed({ href, title, imageSrc, width, height, className }: FlickrEmbedProps) {
+export function FlickrEmbed({
+  href,
+  title,
+  imageSrc,
+  width,
+  height,
+  header = false,
+  className,
+  onHeightChange,
+}: FlickrEmbedProps) {
+  const ref = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     if (window.FlickrEmbedr) {
       window.FlickrEmbedr.process('inline')
@@ -35,15 +48,24 @@ export function FlickrEmbed({ href, title, imageSrc, width, height, className }:
     document.body.appendChild(script)
   }, [])
 
+  useEffect(() => {
+    const node = ref.current
+    if (!node || !onHeightChange) return
+    const observer = new ResizeObserver(() => onHeightChange(node.offsetHeight))
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [onHeightChange])
+
   // Flickr's script swaps the link for an iframe, so React must not own these children.
   const markup =
-    `<a data-flickr-embed="true" data-header="true" href="${escapeAttr(href)}" title="${escapeAttr(title)}">` +
+    `<a data-flickr-embed="true"${header ? ' data-header="true"' : ''} href="${escapeAttr(href)}" title="${escapeAttr(title)}">` +
     `<img src="${escapeAttr(imageSrc)}" width="${width}" height="${height}" alt="${escapeAttr(title)}"/></a>`
 
   return (
     <div
+      ref={ref}
       className={['flickr-embed', className].filter(Boolean).join(' ')}
-      style={{ width, height, maxWidth: '100%' }}
+      style={{ maxWidth: '100%' }}
       dangerouslySetInnerHTML={{ __html: markup }}
     />
   )

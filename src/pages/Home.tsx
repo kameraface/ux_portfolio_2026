@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { Link } from 'react-router'
 import portrait from '../assets/karl-portrait.jpg'
 import { Button } from '../components/Button'
@@ -56,6 +56,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function Home() {
   const activeSection = useActiveSection(SECTION_IDS)
+  const [playHeight, setPlayHeight] = useState<number>()
 
   return (
     <Layout title="Karl Uschold UX — Product Designer" activeSection={activeSection}>
@@ -126,9 +127,17 @@ export function Home() {
         <h2 id="play-title" className="section-title">
           Play
         </h2>
-        <div className="play__grid">
+        <div className="play__grid" style={playHeight ? ({ '--play-height': `${playHeight}px` } as CSSProperties) : undefined}>
           {playItems.map((item) => (
-            <figure key={item.label} className="play__item" style={{ width: item.width }}>
+            <figure
+              key={item.label}
+              className="play__item"
+              style={{
+                width: item.flickrAlbum
+                  ? item.width
+                  : `min(100%, calc(var(--play-height, ${item.height}px) * ${item.width / item.height}))`,
+              }}
+            >
               <figcaption className="play__label">{item.label}</figcaption>
               {item.flickrAlbum ? (
                 <FlickrEmbed
@@ -138,6 +147,7 @@ export function Home() {
                   imageSrc={item.src}
                   width={item.width}
                   height={item.height}
+                  onHeightChange={setPlayHeight}
                 />
               ) : (
                 <img
