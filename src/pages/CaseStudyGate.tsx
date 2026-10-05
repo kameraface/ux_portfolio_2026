@@ -105,7 +105,12 @@ function RequestAccessForm({ project }: { project: Project }) {
       </Form.Submit>
       <div role="status" className="gate-form__status">
         {result === 'sent' && "Thanks! Your request is on its way, and I'll be in touch soon."}
-        {result === 'mailto' && 'Your email app should open with your request ready to send.'}
+        {result === 'mailto' && (
+          <>
+            Your email app should open with your request ready to send. If nothing opened, email{' '}
+            <a href="mailto:karl@karluschold.com">karl@karluschold.com</a>.
+          </>
+        )}
       </div>
       {error && (
         <p role="alert" className="form-field__error">

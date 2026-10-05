@@ -38,6 +38,10 @@
   line-height: 22px;
 }
 
+.gate-form__status a {
+  color: var(--color-primary);
+}
+
 .gate--unlocked {
   text-align: center;
   font-family: var(--font-serif);
