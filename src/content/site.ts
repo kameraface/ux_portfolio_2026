@@ -155,13 +155,13 @@ export interface PlayItem {
 export const playItems: PlayItem[] = [
   {
     label: 'Photography',
-    src: 'https://live.staticflickr.com/65535/55235543823_b93946dcb3_n.jpg',
-    alt: "Karl's Flickr photostream",
+    src: 'https://live.staticflickr.com/8804/28453257161_bff035190e_n.jpg',
+    alt: 'Beasts of Light and Shadow',
     width: 300,
     height: 225,
     flickrAlbum: {
-      href: 'https://www.flickr.com/photos/68135637@N00',
-      title: "Karl's Flickr photostream",
+      href: 'https://www.flickr.com/photos/whittikerowens/albums/72157716711390293',
+      title: 'Beasts of Light and Shadow',
     },
   },
   {

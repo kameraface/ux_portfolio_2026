@@ -67,7 +67,7 @@
   padding: 40px;
   border: 4px solid var(--card-accent);
   border-radius: var(--radius-card);
-  scroll-margin-top: 16px;
+  scroll-margin-top: calc(var(--header-height) + 16px);
 }
 
 .project-card__body {

@@ -65,7 +65,13 @@ textarea {
 }
 
 [id] {
-  scroll-margin-top: 16px;
+  scroll-margin-top: calc(var(--header-height) + 16px);
+}
+
+@media (max-width: 1040px) {
+  :root {
+    --header-height: 93px;
+  }
 }
 
 .skip-link {
