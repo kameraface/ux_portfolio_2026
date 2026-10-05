@@ -3,7 +3,7 @@ import emailIcon from '../assets/icons/email.png'
 import flickrIcon from '../assets/icons/flickr.png'
 import instagramIcon from '../assets/icons/instagram.png'
 import roastyGhostCard from '../assets/roasty-ghost-card.jpg'
-import playBiking from '../assets/play-biking.jpg'
+import playBikesAndSnowshoes from '../assets/play-bikes-and-snowshoes.jpg'
 import playAnimation from '../assets/play-animation.gif'
 
 export type SectionId = 'about' | 'skills' | 'work' | 'play' | 'connect'
@@ -69,9 +69,9 @@ export interface Project {
   slug: string
   title: string
   accent: string
-  summary: string
-  role: string
-  tools: string
+  summary: string[]
+  role?: string
+  tools?: string
   image?: { src: string; alt: string }
   placeholderColor?: string
 }
@@ -81,8 +81,9 @@ export const projects: Project[] = [
     slug: 'reader-dashboard',
     title: 'Reader Dashboard',
     accent: 'var(--color-accent-reader)',
-    summary:
+    summary: [
       'Our organization relies on a third-party tool to manage user preferences. Their UI and UX leave a lot of room for growth. And with a desire to start moving away from reliance on third-parties, we built our own "Reader" Dashboard to provide an on-brand experience that provides clearer navigation and less frustration.',
+    ],
     role: 'Role: Research, Product design lead, User flows, testing, handoff',
     tools: 'Tools: Figma, Google docs, sheets, Google Chrome Dev Tools',
     placeholderColor: '#00ff3c',
@@ -91,17 +92,19 @@ export const projects: Project[] = [
     slug: 'obituaries',
     title: 'Obituaries',
     accent: 'var(--color-accent-obituaries)',
-    summary: 'Developing a nature-conscious camping trip planner for the whole crew.',
-    role: 'Roles: Product designer, research planning, interviewing, wireframing, testing, prototype development',
-    tools: 'Tools: Adobe XD, Figma, Adobe Illustrator, User Interviews, Surveys, Miro, Trello, InVison',
+    summary: [
+      'The business owners wanted to make our obituary services more profitable, and also reduce dependence on vendors in the space. To that end, I was tasked with researching and designing a new obituary product.',
+      'This project started with competitive analysis, wireframing, and business requirements discovery. We launched an MVP version of the project in time to replace our contracts. Follow up work included our own research efforts to learn more about our v2 design project.',
+    ],
     placeholderColor: '#8a0000',
   },
   {
     slug: 'roasty-ghost-coffee',
     title: 'Roasty Ghost Coffee',
     accent: 'var(--color-accent-roasty)',
-    summary:
+    summary: [
       'Roasty Ghost Coffee is a local start-up coffee roaster with the aim of becoming a friendly and knowledgeable presence in the Denver area.',
+    ],
     role: 'Role: Project management, product design, wireframes, style guides, redlining, interviewing, prototyping.',
     tools: 'Tools: Figma, Google forms, Miro, Adobe Illustrator, Maze, Trello',
     image: {
@@ -152,8 +155,8 @@ export const playItems: PlayItem[] = [
     label: 'Photography',
     src: 'https://live.staticflickr.com/8804/28453257161_bff035190e.jpg',
     alt: 'Beasts of Light and Shadow',
-    width: 300,
-    height: 225,
+    width: 220,
+    height: 423,
     flickrAlbum: {
       href: 'https://www.flickr.com/photos/whittikerowens/albums/72157716711390293',
       title: 'Beasts of Light and Shadow',
@@ -161,16 +164,16 @@ export const playItems: PlayItem[] = [
   },
   {
     label: 'Bicycling and Adventures',
-    src: playBiking,
-    alt: 'Karl standing with his road bike on a gravel path beside a freight train',
-    width: 200,
-    height: 200,
+    src: playBikesAndSnowshoes,
+    alt: 'Two scenes blended together: Karl with a loaded touring bike in a green forest, and Karl snowshoeing with a backpack and poles',
+    width: 423,
+    height: 423,
   },
   {
     label: 'Animation of signage at LakeSide Park',
     src: playAnimation,
     alt: 'Animated "wild chipmunk" sign lettering from LakeSide Park',
-    width: 280,
-    height: 280,
+    width: 423,
+    height: 423,
   },
 ]

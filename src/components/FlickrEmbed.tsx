@@ -43,7 +43,7 @@ export function FlickrEmbed({ href, title, imageSrc, width, height, className }:
   return (
     <div
       className={['flickr-embed', className].filter(Boolean).join(' ')}
-      style={{ width, maxWidth: '100%' }}
+      style={{ width, height, maxWidth: '100%' }}
       dangerouslySetInnerHTML={{ __html: markup }}
     />
   )

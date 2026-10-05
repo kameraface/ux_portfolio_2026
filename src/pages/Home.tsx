@@ -24,12 +24,16 @@ function ProjectCard({ project }: { project: Project }) {
           Case Study: {project.title}
         </h3>
         <div className="project-card__text">
-          <p>{project.summary}</p>
-          <p>
-            {project.role}
-            <br />
-            {project.tools}
-          </p>
+          {project.summary.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          {(project.role || project.tools) && (
+            <p>
+              {project.role}
+              {project.role && project.tools && <br />}
+              {project.tools}
+            </p>
+          )}
         </div>
         <Button asChild size="lg">
           <Link to={`/work/${project.slug}`}>
